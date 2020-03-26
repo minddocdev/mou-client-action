@@ -53,7 +53,7 @@ describe('run', () => {
       expect(axiosCreateMock).toBeCalledWith({
         baseURL: host,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
       expect(axiosPostMock).toBeCalledWith('/deployment', {
@@ -83,7 +83,7 @@ describe('run', () => {
       expect(axiosCreateMock).toBeCalledWith({
         baseURL: host,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
       expect(axiosPostMock).toBeCalledWith('/deployment', {
@@ -116,7 +116,7 @@ describe('run', () => {
       expect(axiosCreateMock).toBeCalledWith({
         baseURL: host,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
       expect(axiosPostMock).toBeCalledWith('/deployment', {
@@ -147,7 +147,7 @@ describe('run', () => {
       expect(axiosCreateMock).toBeCalledWith({
         baseURL: host,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
       expect(axiosPostMock).toBeCalledWith('/deployment', {
@@ -174,7 +174,7 @@ describe('run', () => {
     expect(axiosCreateMock).toBeCalledWith({
       baseURL: host,
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: token,
       },
     });
     expect(axiosPostMock).not.toBeCalled();
