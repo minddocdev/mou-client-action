@@ -1,0 +1,22 @@
+name: "MOU Client"
+description: "Interact with MOU rest"
+author: "MindDoc Health GmbH"
+branding:
+  icon: "cloud"
+  color: "blue"
+inputs:
+  command:
+    description: The MOU command to perform (`deploy` or `undeploy`)
+    required: true
+  args:
+    description: The command arguments to pass
+    required: true
+  host:
+    description: The MOU rest host
+    required: true
+  token:
+    description: The MOU rest API token
+    required: true
+runs:
+  using: "node12"
+  main: "dist/run.js"
