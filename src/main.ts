@@ -84,10 +84,11 @@ export async function run() {
 
     switch (command) {
       case 'deploy':
+        core.info(`Triggering 'deploy' with POST arguments: ${JSON.stringify(postArgs)}`);
         await mouClient.post('/deployment', postArgs);
         break;
       case 'undeploy':
-        core.debug('Not implemented');
+        core.info('Not implemented');
         break;
       default:
         throw new Error(`Invalid command "${command}".`);
