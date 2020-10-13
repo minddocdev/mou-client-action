@@ -56,7 +56,7 @@ describe('run', () => {
           Authorization: token,
         },
       });
-      expect(axiosPostMock).toBeCalledWith('/deployment', {
+      expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'mybranch',
         cluster: 'myCluster',
@@ -86,7 +86,7 @@ describe('run', () => {
           Authorization: token,
         },
       });
-      expect(axiosPostMock).toBeCalledWith('/deployment', {
+      expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'master',
         cluster: 'myCluster',
@@ -119,7 +119,7 @@ describe('run', () => {
           Authorization: token,
         },
       });
-      expect(axiosPostMock).toBeCalledWith('/deployment', {
+      expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'givenbranch',
         environment: 'myEnv',
@@ -150,7 +150,7 @@ describe('run', () => {
           Authorization: token,
         },
       });
-      expect(axiosPostMock).toBeCalledWith('/deployment', {
+      expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'master',
         environment: 'myEnv',
