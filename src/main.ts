@@ -85,7 +85,7 @@ export async function run() {
     switch (command) {
       case 'deploy':
         core.info(`Triggering 'deploy' with POST arguments: ${JSON.stringify(postArgs)}`);
-        await mouClient.post('/deployment', postArgs);
+        await mouClient.post('/deployments', postArgs);
         break;
       case 'undeploy':
         core.info('Not implemented');
