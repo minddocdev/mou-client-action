@@ -78,7 +78,7 @@ export async function run() {
     const mouClient = axios.create({
       baseURL: host,
       headers: {
-        Authorization: token,
+        Authorization: `Bearer ${token}`,
       },
     });
 

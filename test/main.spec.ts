@@ -16,8 +16,10 @@ describe('run', () => {
     'environment: test';
   const host = 'http://localhost/api/mou';
   const token = 'secret';
-  // Fixtures
   const sha = '734713bc047d87bf7eac9674765ae793478c50d3';
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
 
   const mockInput = (mockCommand: string, mockArgs: string = args) => {
     (getInput as jest.Mock).mockImplementation((name: string) => {
@@ -51,10 +53,8 @@ describe('run', () => {
       await run();
 
       expect(axiosCreateMock).toBeCalledWith({
+        headers,
         baseURL: host,
-        headers: {
-          Authorization: token,
-        },
       });
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
@@ -81,10 +81,8 @@ describe('run', () => {
       await run();
 
       expect(axiosCreateMock).toBeCalledWith({
+        headers,
         baseURL: host,
-        headers: {
-          Authorization: token,
-        },
       });
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
@@ -114,10 +112,8 @@ describe('run', () => {
       await run();
 
       expect(axiosCreateMock).toBeCalledWith({
+        headers,
         baseURL: host,
-        headers: {
-          Authorization: token,
-        },
       });
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
@@ -145,10 +141,8 @@ describe('run', () => {
       await run();
 
       expect(axiosCreateMock).toBeCalledWith({
+        headers,
         baseURL: host,
-        headers: {
-          Authorization: token,
-        },
       });
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
@@ -172,10 +166,8 @@ describe('run', () => {
     await run();
 
     expect(axiosCreateMock).toBeCalledWith({
+      headers,
       baseURL: host,
-      headers: {
-        Authorization: token,
-      },
     });
     expect(axiosPostMock).not.toBeCalled();
     expect(setFailed).not.toBeCalled();
