@@ -9,6 +9,7 @@ interface Args {
   app: string;
   environment: string;
   branch?: string;
+  changeType?: string;
   cluster?: string;
   domain?: string;
   tag?: string;
@@ -56,7 +57,8 @@ export async function run() {
     const host = core.getInput('host', { required: true });
     const token = core.getInput('token', { required: true });
 
-    const { context: { ref, sha } } = github;
+    const { context: { payload, ref, sha } } = github;
+
     const postArgs: Args = args;
     if (ref.startsWith('refs/tags/') && !postArgs.tag) {
       // Detect tag from context if no tag is provided
@@ -73,6 +75,16 @@ export async function run() {
     // Default branch to master if it could not be detected
     if (!postArgs.branch) {
       postArgs.branch = 'master';
+    }
+
+    // Detect type of change
+    if (payload && payload.commits && payload.commits.length > 0) {
+      let changeType = 'patch';
+      payload.commits.forEach(({ message }: { message: string }) => {
+        if (message.includes('#MINOR') && changeType != 'major') changeType = 'minor';
+        if (message.includes('#MAJOR')) changeType = 'major'
+      });
+      postArgs.changeType = changeType;
     }
 
     const mouClient = axios.create({

@@ -95,7 +95,7 @@ describe('run', () => {
       expect(setFailed).not.toBeCalled();
     });
 
-    test('when sha and branch is given', async () => {
+    test('when sha and branch is given for a MINOR change', async () => {
       mockInput(
         'deploy',
         '{ "app": "myApp", "environment": "myEnv", "branch": "givenbranch", "sha": "givensha" }'
@@ -108,6 +108,12 @@ describe('run', () => {
       (axios.create as jest.Mock).mockImplementation(axiosCreateMock);
       github.context.ref = 'refs/heads/otherbranch';
       github.context.sha = sha;
+      github.context.payload = {
+        commits: [
+          { message: 'Normal commit' },
+          { message: 'Bump #MINOR' },
+        ],
+      };
 
       await run();
 
@@ -118,13 +124,14 @@ describe('run', () => {
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'givenbranch',
+        changeType: 'minor',
         environment: 'myEnv',
         sha: 'givensha',
       });
       expect(setFailed).not.toBeCalled();
     });
 
-    test('when tag is given', async () => {
+    test('when tag is given for a MAJOR change', async () => {
       mockInput(
         'deploy',
         '{ "app": "myApp", "environment": "myEnv", "tag": "giventag" }',
@@ -137,6 +144,13 @@ describe('run', () => {
       (axios.create as jest.Mock).mockImplementation(axiosCreateMock);
       github.context.ref = 'refs/tags/othertag';
       github.context.sha = sha;
+      github.context.payload = {
+        commits: [
+          { message: 'Normal commit' },
+          { message: 'Bump #MAJOR' },
+          { message: 'Bump #MINOR' },
+        ]
+      };
 
       await run();
 
@@ -147,6 +161,7 @@ describe('run', () => {
       expect(axiosPostMock).toBeCalledWith('/deployments', {
         app: 'myApp',
         branch: 'master',
+        changeType: 'major',
         environment: 'myEnv',
         tag: 'giventag',
       });
