@@ -764,10 +764,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:>= 8, @types/node@npm:^13.7.7":
+"@types/node@npm:>= 8":
   version: 13.9.4
   resolution: "@types/node@npm:13.9.4"
   checksum: 2/694deafd537db183686556fc9005a5a0910b57fb88b06e7c39bc27423006014566f2ceb316c95095beef5c02e44367f18cbeb6106c5df11ea983535a0b6a3e3b
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.11.65":
+  version: 16.11.65
+  resolution: "@types/node@npm:16.11.65"
+  checksum: 2/816ead0827e0ac4f519ea232f271735ea500091c3069c6aa13930595e1ce0eef2beaabf0161990aff46299de439409d5a62945f65b5d492a19d881a6f1dd3588
   languageName: node
   linkType: hard
 
@@ -5293,7 +5300,7 @@ fsevents@^2.1.2:
     "@types/eslint-plugin-prettier": ^2.2.0
     "@types/jest": ^25.1.3
     "@types/js-yaml": ^3.12.3
-    "@types/node": ^13.7.7
+    "@types/node": ^16.11.65
     "@types/prettier": 1.19.0
     "@typescript-eslint/eslint-plugin": ^2.22.0
     "@typescript-eslint/parser": ^2.22.0

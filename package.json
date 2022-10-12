@@ -1,6 +1,6 @@
 {
   "name": "mou-client-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Github action that interacts with MOU library",
   "main": "src/index.ts",
   "repository": "https://github.com/minddocdev/mou-client-action",
@@ -17,7 +17,7 @@
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/jest": "^25.1.3",
     "@types/js-yaml": "^3.12.3",
-    "@types/node": "^13.7.7",
+    "@types/node": "^16.11.65",
     "@types/prettier": "1.19.0",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",

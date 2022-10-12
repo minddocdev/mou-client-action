@@ -51,7 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@types/node",
-        "npm:13.9.4"
+        "npm:16.11.65"
       ],
       [
         "@types/prettier",
@@ -174,7 +174,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint-plugin-prettier", "npm:2.2.0"],
             ["@types/jest", "npm:25.1.4"],
             ["@types/js-yaml", "npm:3.12.3"],
-            ["@types/node", "npm:13.9.4"],
+            ["@types/node", "npm:16.11.65"],
             ["@types/prettier", "npm:1.19.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:2.25.0"],
             ["@typescript-eslint/parser", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:2.25.0"],
@@ -1048,6 +1048,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-13.9.4-2c8636aea7-2.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:13.9.4"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:16.11.65", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.65-1ab60ac4e7-2.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:16.11.65"]
           ],
           "linkType": "HARD",
         }]
@@ -6084,7 +6091,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint-plugin-prettier", "npm:2.2.0"],
             ["@types/jest", "npm:25.1.4"],
             ["@types/js-yaml", "npm:3.12.3"],
-            ["@types/node", "npm:13.9.4"],
+            ["@types/node", "npm:16.11.65"],
             ["@types/prettier", "npm:1.19.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:2.25.0"],
             ["@typescript-eslint/parser", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:2.25.0"],
