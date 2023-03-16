@@ -18,5 +18,5 @@ inputs:
     description: The MOU rest API token
     required: true
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/run.js"
