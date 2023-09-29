@@ -19,7 +19,7 @@ interface Args {
 function getArgs(): Args {
   const rawArgs = core.getInput('args', { required: true });
   core.debug(`Parsing raw args '${rawArgs}'...`);
-  let args: Args;
+  let args: any;
   try {
     // Try JSON first
     args = JSON.parse(rawArgs);
@@ -27,24 +27,26 @@ function getArgs(): Args {
   } catch (jsonError) {
     // Try YAML format
     try {
-      args = yaml.safeLoad(rawArgs);
+      args = yaml.load(rawArgs);
     } catch (yamlError) {
       throw new Error(`Unable to parse args. Found content: "${rawArgs}"`);
     }
   }
   // Check loaded types
-  ['app', 'environment'].forEach(requiredKey => {
+  ['app', 'environment'].forEach((requiredKey) => {
     const requiredValue = args[requiredKey];
     if (!requiredValue || typeof requiredValue !== 'string') {
       throw new Error(
         `Invalid arg value for mandatory key "${requiredKey}". ` +
-        `Found "${requiredValue}" while expecting a string.`);
+          `Found "${requiredValue}" while expecting a string.`,
+      );
     }
   });
-  ['branch', 'cluster', 'domain', 'tag', 'sha'].forEach(optionalKey => {
+  ['branch', 'cluster', 'domain', 'tag', 'sha'].forEach((optionalKey) => {
     if (args[optionalKey] && typeof args[optionalKey] !== 'string') {
       throw new Error(
-        `Expecting string in "${optionalKey}" optional arg. Found "${args[optionalKey]}".`);
+        `Expecting string in "${optionalKey}" optional arg. Found "${args[optionalKey]}".`,
+      );
     }
   });
   return args;
@@ -57,7 +59,9 @@ export async function run() {
     const host = core.getInput('host', { required: true });
     const token = core.getInput('token', { required: true });
 
-    const { context: { payload, ref, sha } } = github;
+    const {
+      context: { payload, ref, sha },
+    } = github;
 
     const postArgs: Args = args;
     if (ref.startsWith('refs/tags/') && !postArgs.tag) {
@@ -70,7 +74,7 @@ export async function run() {
     }
     // Load sha from context if no sha is provided or no tag is detected
     if (!postArgs.tag && !postArgs.sha) {
-        postArgs.sha = sha;
+      postArgs.sha = sha;
     }
     // Default branch to master if it could not be detected
     if (!postArgs.branch) {
@@ -82,7 +86,7 @@ export async function run() {
       let changeType = 'patch';
       payload.commits.forEach(({ message }: { message: string }) => {
         if (message.includes('#MINOR') && changeType != 'major') changeType = 'minor';
-        if (message.includes('#MAJOR')) changeType = 'major'
+        if (message.includes('#MAJOR')) changeType = 'major';
       });
       postArgs.changeType = changeType;
     }
@@ -105,7 +109,7 @@ export async function run() {
       default:
         throw new Error(`Invalid command "${command}".`);
     }
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message);
   }
 }
