@@ -1,9 +1,9 @@
-name: "main"
+name: 'main'
 
 on:
   push:
     branches:
-      - "master"
+      - 'master'
     paths:
       - .github/workflows/main.yaml
       - .github/RELEASE_DRAFT/*
