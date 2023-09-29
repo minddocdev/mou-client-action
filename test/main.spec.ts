@@ -6,6 +6,7 @@ import { run } from '@minddocdev/mou-client-action/main';
 
 jest.mock('@actions/core');
 jest.mock('axios');
+jest.mock('github');
 
 describe('run', () => {
   // Required input values
