@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint-plugin-prettier", "npm:3.1.1"],\
             ["@types/jest", "npm:29.5.5"],\
             ["@types/js-yaml", "npm:4.0.6"],\
-            ["@types/node", "npm:20.8.2"],\
+            ["@types/node", "npm:20.8.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:6.7.4"],\
             ["@typescript-eslint/parser", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:6.7.4"],\
             ["axios", "npm:1.5.1"],\
@@ -1802,10 +1802,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:20.8.2", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-20.8.2-6691982ce3-3da73e25d8.zip/node_modules/@types/node/",\
+        ["npm:20.8.4", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.8.4-eacd001178-2106b9ef97.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:20.8.2"]\
+            ["@types/node", "npm:20.8.4"],\
+            ["undici-types", "npm:5.25.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5888,7 +5889,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.23.0"],\
             ["@jest/test-sequencer", "npm:29.7.0"],\
             ["@jest/types", "npm:29.6.3"],\
-            ["@types/node", "npm:20.8.2"],\
+            ["@types/node", "npm:20.8.4"],\
             ["@types/ts-node", null],\
             ["babel-jest", "virtual:65e6343beaf2ef3b2e1cf1cdda98ab506cb9cfda93cd37ab4023a78eafcce86468d369ceff22698ddbeb59e01ec6f21109a4f785fbebe8112134d6b7000c6930#npm:29.7.0"],\
             ["chalk", "npm:4.1.2"],\
@@ -6848,7 +6849,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint-plugin-prettier", "npm:3.1.1"],\
             ["@types/jest", "npm:29.5.5"],\
             ["@types/js-yaml", "npm:4.0.6"],\
-            ["@types/node", "npm:20.8.2"],\
+            ["@types/node", "npm:20.8.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:6.7.4"],\
             ["@typescript-eslint/parser", "virtual:947ca2cef8fb643b2f1ecb987790f04500193f99d2e9604822401512359c2c5909a521d14cc3a3ec1c9dd20619dd1097c111bbb121a5b4a2b8670fbfd9cba4d5#npm:6.7.4"],\
             ["axios", "npm:1.5.1"],\
@@ -8615,6 +8616,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has-bigints", "npm:1.0.2"],\
             ["has-symbols", "npm:1.0.3"],\
             ["which-boxed-primitive", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["undici-types", [\
+        ["npm:5.25.3", {\
+          "packageLocation": "./.yarn/cache/undici-types-npm-5.25.3-2ac9eafc9e-ec9d2cc365.zip/node_modules/undici-types/",\
+          "packageDependencies": [\
+            ["undici-types", "npm:5.25.3"]\
           ],\
           "linkType": "HARD"\
         }]\
